@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jogo da memoria</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div id="titulo">
+                <h1>Jogo da memoria</h1>
+            </div>
+            <div id="toolbar">
+                
+            </div>
+        </header>
+        <div id="content">
+                
+        </div>
+        <script>
+            $('document').ready(function () {
+                let q = ""
+                for (let i = 0; i < 16; i++) {
+                    q += '<div id="imageContainer"><h1>A</h1></div>'
+                    $('#content').html(q);
+                }
+                console.log(q);
+                
+            });
+        </script>
+    </body>
+</html>
