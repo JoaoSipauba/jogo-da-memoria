@@ -9,6 +9,7 @@
         <header>
             <div id="titulo">
                 <h1>Jogo da memoria</h1>
+                <div id="hpj"></div>
             </div>
             <div id="toolbar">               
             </div>
@@ -24,9 +25,14 @@
                 
                 for (let i = 0; i < tamanho; i++) {
                     let randomGet = Math.floor(Math.random() * matriz.length);
-                    q += `<div id="imageContainer"><h1>${matriz.splice(randomGet,1)}</h1></div>`
+                    q += `<div class="imageContainer"><h1>${matriz.splice(randomGet,1)}</h1></div>`
                     $('#content').html(q);
-                }               
+                }  
+                
+                $('.imageContainer').on('click',function (event) {
+                    console.log($(this).text())
+
+                })
             });
         </script>
     </body>

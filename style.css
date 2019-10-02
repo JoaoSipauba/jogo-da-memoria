@@ -35,7 +35,7 @@ button{
     margin-left: 50%;
     margin-top: 50%;
 }
-#content #imageContainer{
+#content .imageContainer{
     background-color: rgb(0, 0, 0);
     width: 80px;
     height: 80px;
@@ -43,7 +43,7 @@ button{
     float: left;
 }
 
-#content #imageContainer h1{
+#content .imageContainer h1{
     color: aliceblue;
     background-color: transparent;
 }
