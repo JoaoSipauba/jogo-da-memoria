@@ -1,0 +1,30 @@
+body{
+    background-color: aqua;
+}
+h1{
+    margin-top: 30px;
+    font-size: 70px;
+    text-align: center;
+    padding: 5px;
+}
+#content_inicial{
+    background-color: aqua;
+    margin: 0 auto;
+    padding: 7.5px;
+    width: 410px;
+    height: 380px;   
+    line-height: 500px;
+}
+#content_inicial .btn{
+    display: inline-block;
+}
+button{
+    cursor: pointer;
+    padding: 9px 25px;
+    border-radius: 50px;
+    border: white;
+    background-color: rgba(0, 136, 169, 1);
+    width: 200px;
+    height: 100px;
+    font-size: 150%;
+}
