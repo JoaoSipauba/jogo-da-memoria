@@ -1,13 +1,11 @@
 body{
     background-color: aqua;
 }
-
 h1{
     font-size: 40px;
     text-align: center;
-    background-color: aquamarine;
+    padding: 10px;
 }
-
 #content{
     background-color: gainsboro;
     margin-left: 38%;
@@ -16,50 +14,17 @@ h1{
     max-width: 382px;
 
 }
-#content_inicial{
-    background-color: gainsboro;
-    margin-left: 38%;
-    margin-top: 7%;
-    position: absolute;
-    padding: 7.5px;
-    width: 382px;
-    height: 380px;
-    align-items: center;
-    display: flex;
-    justify-content: center
-}
-#content_inicial .btn{
-    display: inline-block;
-    margin: 0 auto;
-}
-button{
-    cursor: pointer;
-    padding: 9px 25px;
-    border-radius: 50px;
-    border: white;
-    background-color: rgba(0, 136, 169, 1);
-    width: 180px;
-    height: 70px;
-    font-size: 150%
-}
 #content .imageContainer{
     width: 80px;
     height: 80px;
     margin: 7.5px;
     float: left;
 }
-
-#content .imageContainer h1{
-    color: aliceblue;
-    background-color: transparent;
-}
-
 #content .imageContainer .front{
     background-color: rgba(143, 57, 0, 0.945);
     width: 100%;
     height: 100%;
 }
-
 #content .imageContainer .back{
     background-color: transparent;
     width: 100%;

@@ -2,55 +2,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Jogo da memoria</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jogo da Memoria</title>
+    <link rel="stylesheet" href="src/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
     <header>
         <div id="titulo">
-            <h1>Jogo da memoria</h1>
+            <h1>Jogo da Memoria</h1>
         </div>
         <div id="toolbar">
+            <a class="btn_sair" href="inicial.html"><button>Sair</button></a>
+            <a class="btn_reiniciar">
+                <button>reiniciar</button>
+            </a>
         </div>
     </header>
     <div id="content">
         <script>
             $('document').ready(function () {
                 let q = ""
-                let elementos = ['black', 'red', 'gray', 'blue', 'yellow', 'pink', 'orange', 'green'];
+                let elementos = ['black', 'red', 'purple', 'blue', 'white', 'pink', 'orange', 'green'];
                 let matriz = elementos.concat(elementos);
                 let tamanho = matriz.length;
+                function imageRandom() {
+                    for (let i = 0; i < tamanho; i++) {
+                        let randomGet = Math.floor(Math.random() * matriz.length);
 
-                for (let i = 0; i < tamanho; i++) {
-                    let randomGet = Math.floor(Math.random() * matriz.length);
-
-                    q += `<div id='${matriz[randomGet]}' class="imageContainer" style="background-color: ${matriz.splice(randomGet, 1)}">
-                            <div class="front"></div>
-                        </div>`
-                    $('#content').html(q);
+                        q += `<div id='${matriz[randomGet]}' class="imageContainer" style="background-color: ${matriz.splice(randomGet, 1)}">
+                                <div class="front"></div>
+                            </div>`
+                        $('#content').html(q);
+                    }                    
                 }
+
+                imageRandom()                
                 var click = []
+                var achados = 0
+                $('.btn_reiniciar').on('click', imageRandom)
                 $('.imageContainer').on('click', function (event) {
                     if ($(this).find('.back').attr('class') === 'back') {
                         return
                     }
-
                     let hidden = $(this).find('.front')
-
                     hidden.removeClass('front').addClass('back')
-
                     click.push(
                         {
                             nome: $(this).attr('id'),
                             obj: $(this)
                         }
                     )
-                    console.log(click);
                     if (click.length === 2) {
                         if (click[0].nome === click[1].nome) {
                             console.log('iguais');
+                            achados = achados + 1;
+                            console.log(achados);
+                            if (achados === 8){
+                                alert('você ganhou!');
+                            }                            
                         }
                         else {
                             for (const item of click) {
