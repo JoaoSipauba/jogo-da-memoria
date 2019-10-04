@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
 body{
     background-color: aqua;
 }
@@ -6,6 +8,7 @@ h1{
     font-size: 70px;
     text-align: center;
     padding: 5px;
+    font-family: 'Oswald', sans-serif;
 }
 #content_inicial{
     background-color: aqua;
