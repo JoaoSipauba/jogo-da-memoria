@@ -1,69 +1,70 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Jogo da memoria</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <div id="titulo">
-                <h1>Jogo da memoria</h1>
-            </div>
-            <div id="toolbar">               
-            </div>
-        </header>
-        <div id="content">               
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da memoria</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="titulo">
+            <h1>Jogo da memoria</h1>
         </div>
+        <div id="toolbar">
+        </div>
+    </header>
+    <div id="content">
         <script>
             $('document').ready(function () {
                 let q = ""
-                let elementos = ['black','red','gray','blue','yellow','pink','orange','green'];
+                let elementos = ['black', 'red', 'gray', 'blue', 'yellow', 'pink', 'orange', 'green'];
                 let matriz = elementos.concat(elementos);
                 let tamanho = matriz.length;
-                
+
                 for (let i = 0; i < tamanho; i++) {
                     let randomGet = Math.floor(Math.random() * matriz.length);
-                    
-                    q += `<div id='${matriz[randomGet]}' class="imageContainer" style="background-color: ${matriz.splice(randomGet,1)}">
+
+                    q += `<div id='${matriz[randomGet]}' class="imageContainer" style="background-color: ${matriz.splice(randomGet, 1)}">
                             <div class="front"></div>
                         </div>`
                     $('#content').html(q);
-                }  
+                }
                 var click = []
-                $('.imageContainer').on('click',function (event) {
-                    if ($(this).find('.back').attr('class') === 'back'){
+                $('.imageContainer').on('click', function (event) {
+                    if ($(this).find('.back').attr('class') === 'back') {
                         return
                     }
-                    
+
                     let hidden = $(this).find('.front')
-                    
+
                     hidden.removeClass('front').addClass('back')
-                    
+
                     click.push(
                         {
                             nome: $(this).attr('id'),
                             obj: $(this)
                         }
                     )
-
                     console.log(click);
                     if (click.length === 2) {
                         if (click[0].nome === click[1].nome) {
                             console.log('iguais');
-                            
-                        } 
-                        else{                       
+                        }
+                        else {
                             for (const item of click) {
-                                setTimeout(function () {                                 
+                                setTimeout(function () {
                                     item.obj.find('.back').removeClass('back').addClass('front');
-                                },1000)
+                                }, 500)
                             }
                         }
                         click = []
-                    }                    
+                    }
                 })
             });
         </script>
-    </body>
+    </div>
+</body>
+
 </html>

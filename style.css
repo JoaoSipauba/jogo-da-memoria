@@ -10,7 +10,7 @@ h1{
 
 #content{
     background-color: gainsboro;
-    margin-left: 36%;
+    margin-left: 38%;
     position: absolute;
     padding: 7.5px;
     max-width: 382px;
@@ -18,21 +18,29 @@ h1{
 }
 #content_inicial{
     background-color: gainsboro;
-    margin-left: 36%;
+    margin-left: 38%;
+    margin-top: 7%;
     position: absolute;
     padding: 7.5px;
     width: 382px;
-    height: 500px;
+    height: 380px;
     align-items: center;
+    display: flex;
+    justify-content: center
+}
+#content_inicial .btn{
+    display: inline-block;
+    margin: 0 auto;
 }
 button{
     cursor: pointer;
     padding: 9px 25px;
     border-radius: 50px;
-    border: none;
+    border: white;
     background-color: rgba(0, 136, 169, 1);
-    margin-left: 50%;
-    margin-top: 50%;
+    width: 180px;
+    height: 70px;
+    font-size: 150%
 }
 #content .imageContainer{
     width: 80px;
