@@ -22,19 +22,27 @@
     <div id="content">
         <script>
             $('document').ready(function () {
+                if (localStorage.getItem("top3") === null) {
+                    localStorage.setItem("top3", "")
+                }
+                if (localStorage.getItem("top2") === null) {
+                    localStorage.setItem("top2", "")
+                }
+                if (localStorage.getItem("top1") === null) {
+                    localStorage.setItem("top1", "")
+                }
                 let q = ""
                 let elementos = ['black', 'red', 'purple', 'blue', 'white', 'pink', 'orange', 'green'];
                 let matriz = elementos.concat(elementos);
                 let tamanho = matriz.length;
                 for (let i = 0; i < tamanho; i++) {
-                    $
                     let randomGet = Math.floor(Math.random() * matriz.length);
-
                     q += `<div id='${matriz[randomGet]}' class="imageContainer" style="background-color: ${matriz.splice(randomGet, 1)}">
                                 <div class="front"></div>
                             </div>`
                     $('#content').html(q);
                 }
+                var t0 = performance.now();
                 var click = []
                 var achados = 0
                 $('.btn_reiniciar').on('click', function () { document.location.reload() })
@@ -56,7 +64,21 @@
                             achados = achados + 1;
                             console.log(achados);
                             if (achados === 8) {
-                                alert('você ganhou!');
+                                var t1 = performance.now();
+                                var tempo = ((t1 - t0) / 1000).toFixed(2);
+                                var top1 = localStorage.getItem("top1")
+                                var top2 = localStorage.getItem("top2")
+                                var top3 = localStorage.getItem("top3")
+                                alert(`você ganhou! em ${tempo} segundos.`);
+                                if ((tempo < top3 || top3 === '') && tempo > top2) {
+                                    localStorage.setItem('top3', tempo);
+                                }
+                                if ((tempo < top2 || top2 === '')&& tempo > top1) {
+                                    localStorage.setItem('top2', tempo);
+                                }
+                                if (tempo < top1 || top1 === '') {
+                                    localStorage.setItem('top1', tempo);
+                                }
                             }
                         }
                         else {
