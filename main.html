@@ -26,22 +26,18 @@
                 let elementos = ['black', 'red', 'purple', 'blue', 'white', 'pink', 'orange', 'green'];
                 let matriz = elementos.concat(elementos);
                 let tamanho = matriz.length;
-                function imageRandom() {
-                    for (let i = 0; i < tamanho; i++) {
-                        $
-                        let randomGet = Math.floor(Math.random() * matriz.length);
+                for (let i = 0; i < tamanho; i++) {
+                    $
+                    let randomGet = Math.floor(Math.random() * matriz.length);
 
-                        q += `<div id='${matriz[randomGet]}' class="imageContainer" style="background-color: ${matriz.splice(randomGet, 1)}">
+                    q += `<div id='${matriz[randomGet]}' class="imageContainer" style="background-color: ${matriz.splice(randomGet, 1)}">
                                 <div class="front"></div>
                             </div>`
-                        $('#content').html(q);
-                    }                    
+                    $('#content').html(q);
                 }
-
-                imageRandom()                
                 var click = []
                 var achados = 0
-                $('.btn_reiniciar').on('click', imageRandom)
+                $('.btn_reiniciar').on('click', function () { document.location.reload() })
                 $('.imageContainer').on('click', function (event) {
                     if ($(this).find('.back').attr('class') === 'back') {
                         return
@@ -59,9 +55,9 @@
                             console.log('iguais');
                             achados = achados + 1;
                             console.log(achados);
-                            if (achados === 8){
+                            if (achados === 8) {
                                 alert('você ganhou!');
-                            }                            
+                            }
                         }
                         else {
                             for (const item of click) {
