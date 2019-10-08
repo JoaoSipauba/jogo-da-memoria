@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Jogo da Memoria</title>
+    <title>Jogo da Memória</title>
     <link rel="stylesheet" href="src/css/inicial.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -10,7 +10,7 @@
 <body>
     <header>
         <div id="titulo">
-            <h1>Jogo da Memoria</h1>
+            <h1>Jogo da Memória</h1>
         </div>
         <div id="toolbar">
         </div>
@@ -20,6 +20,9 @@
             <a id="btn_iniciar" href="main.html">
                 <button>Iniciar</button>
             </a>
+            <a id="btn_sobre" href="sobre.html">
+                <button>Sobre</button>
+            </a>
         </div>
         <div id="content_rank">
             <div id="rank">
@@ -27,7 +30,7 @@
                     if (localStorage.getItem('top1')===null) {
                     }
                     else  {
-                        var rankTxt = `<h2>Recorde: ${localStorage.getItem('top1')}s</h2>`
+                        var rankTxt = `<h2>Recorde de ${localStorage.getItem('recordista')} em ${localStorage.getItem('top1')}s</h2>`
                         document.write(rankTxt)
                     }                   
                 </script>                
