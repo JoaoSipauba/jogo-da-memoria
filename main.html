@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="esconde()">
     <header>
         <div id="titulo">
             <h1>Jogo da Memória</h1>
@@ -20,7 +20,11 @@
         </div>
     </header>
     <div id="content"></div>
+
     <script>
+        function esconde() {
+            $("#ExemploModalCentralizado").hide();
+        }
         $('.btn_reiniciar').on('click', function () { document.location.reload() })
         $('document').ready(function () {
             if (localStorage.getItem("top1") === null) {
@@ -39,6 +43,7 @@
             }
             var t0 = performance.now();
             var click = []
+            var errou = 0
             var achados = 0
             $('.imageContainer').on('click', function (event) {
                 if ($(this).find('.back').attr('class') === 'back') {
@@ -66,10 +71,11 @@
                                 localStorage.setItem('top1', tempo);
                                 localStorage.setItem('recordista', nome);
                             }
-                            else{
+                            else {
                                 alert(`você ganhou em ${tempo} segundos.`);
                             }
                         }
+                        errou = 0;
                     }
                     else {
                         for (const item of click) {
@@ -77,8 +83,13 @@
                                 item.obj.find('.back').removeClass('back').addClass('front');
                             }, 500)
                         }
+                        errou = errou + 1;
                     }
                     click = []
+                    if (errou === 4) {
+                        alert('você errou 4 vezes seguidas!');
+                        location.href = "inicial.html";
+                    }
                 }
             })
         });

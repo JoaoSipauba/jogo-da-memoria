@@ -27,7 +27,7 @@
         <div id="content_rank">
             <div id="rank">
                 <script>
-                    if (localStorage.getItem('top1')===null) {
+                    if (localStorage.getItem('top1')===null ||localStorage.getItem('top1')===800) {
                     }
                     else  {
                         var rankTxt = `<h2>Recorde de ${localStorage.getItem('recordista')} em ${localStorage.getItem('top1')}s</h2>`
