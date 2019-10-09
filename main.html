@@ -20,8 +20,12 @@
         </div>
     </header>
     <div id="content"></div>
-
+    <div id="msg">
+        <div id="mensagem"></div>
+        <button id="b">ok</button>
+    </div>
     <script>
+        $('#msg').hide().show(200)
         function esconde() {
             $("#ExemploModalCentralizado").hide();
         }
@@ -70,9 +74,13 @@
                                 var nome = prompt('você bateu o recorde! Digite seu nome');
                                 localStorage.setItem('top1', tempo);
                                 localStorage.setItem('recordista', nome);
+                                location.href = "inicial.html";
+                                $('#msg').show()
                             }
                             else {
                                 alert(`você ganhou em ${tempo} segundos.`);
+                                location.href = "inicial.html";
+                                $('#msg').show()
                             }
                         }
                         errou = 0;
@@ -86,9 +94,11 @@
                         errou = errou + 1;
                     }
                     click = []
-                    if (errou === 4) {
-                        alert('você errou 4 vezes seguidas!');
-                        location.href = "inicial.html";
+                    if (errou === 6) {
+                        /*alert('você errou 6 vezes seguidas!');
+                        location.href = "inicial.html";*/
+                        $('#msg').show()
+
                     }
                 }
             })
