@@ -30,18 +30,6 @@ h1{
     border-radius: 10px;
     border: 2px solid rgba(143, 57, 0, 0.945);
 }
-#pop{
-    background-color: gainsboro;
-    
-    padding: 7.5px;
-    width: 500px;
-    height: 100px;
-    border-radius: 10px;
-    border: 2px solid rgba(143, 57, 0, 0.945);
-    position: relative;
-    left: 35%;
-    top: -30%;
-}
 button{
     cursor: pointer;
     border-radius: 50px;
