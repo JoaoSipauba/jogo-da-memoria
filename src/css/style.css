@@ -40,6 +40,8 @@ button{
     font-size: 120%;
     font-family: 'Lato', sans-serif;
     color: aliceblue;
+    border: 2px solid rgba(0, 0, 0, 0.945);
+
 }
 #content .imageContainer{
     width: 80px;
@@ -74,14 +76,34 @@ button{
     margin: 0 auto;
     text-align: center;
     border-radius: 10px;
-    border: 3px solid black;
+    border: 3px solid rgba(0, 0, 0, 0.945);
 }
-#msg #mensagem{
-    margin: 0 auto;
-    width: 50%;
+#mensagem{
+    margin: 3 auto;
+    width: 70%;
     height: 40%;
-    background-color: aliceblue
+    background-color: aliceblue;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.945);
+    background-color: gainsboro;
+}
+#inputName{
+    margin-top: 5%;
+    margin-left: 35%;
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 10%;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.945);
+    text-align: center;
+    background-color: gainsboro;
 }
 #msg #b{
-    margin-top: 22%
+    margin: 0 auto;
+    margin-top: 11%;
+
+}
+#erros{
+    text-align: center;
 }

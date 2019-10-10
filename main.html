@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="src/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-
-<body onload="esconde()">
+<body>
     <header>
         <div id="titulo">
             <h1>Jogo da Memória</h1>
@@ -22,13 +21,12 @@
     <div id="content"></div>
     <div id="msg">
         <div id="mensagem"></div>
+        <input type="text" id="inputName" maxlength="10" placeholder="Digite seu nome">
         <button id="b">ok</button>
     </div>
+    <div id="erros"></div>
     <script>
-        $('#msg').hide().show(200)
-        function esconde() {
-            $("#ExemploModalCentralizado").hide();
-        }
+        $('#msg').hide()
         $('.btn_reiniciar').on('click', function () { document.location.reload() })
         $('document').ready(function () {
             if (localStorage.getItem("top1") === null) {
@@ -49,6 +47,10 @@
             var click = []
             var errou = 0
             var achados = 0
+            $('#b').on('click',function () {
+                $('#msg').show().hide(200);
+                location.href = "inicial.html";
+            })
             $('.imageContainer').on('click', function (event) {
                 if ($(this).find('.back').attr('class') === 'back') {
                     return
@@ -70,20 +72,20 @@
                             var t1 = performance.now();
                             var tempo = ((t1 - t0) / 1000).toFixed(2);
                             var top1 = localStorage.getItem("top1")
-                            if (tempo < top1) {
-                                var nome = prompt('você bateu o recorde! Digite seu nome');
-                                localStorage.setItem('top1', tempo);
-                                localStorage.setItem('recordista', nome);
-                                location.href = "inicial.html";
+                            if (tempo < top1) {                               
                                 $('#msg').show()
+                                $('#msg #mensagem').html(`<h2>você bateu o recorde em ${tempo}s.</h2>`)
+                                nome = querySelector('#inputName')
+                                console.log(nome);
+                                
                             }
                             else {
-                                alert(`você ganhou em ${tempo} segundos.`);
-                                location.href = "inicial.html";
                                 $('#msg').show()
+                                $('#msg #mensagem').html(`<h2>você ganhou em ${tempo}s.</h2>`)
                             }
                         }
                         errou = 0;
+                        $('#erros').html('');
                     }
                     else {
                         for (const item of click) {
@@ -92,13 +94,13 @@
                             }, 500)
                         }
                         errou = errou + 1;
+                        $('#erros').html(`<h2>você errou ${errou} vezes.</h2>`);
                     }
                     click = []
-                    if (errou === 6) {
-                        /*alert('você errou 6 vezes seguidas!');
-                        location.href = "inicial.html";*/
+                    if (errou === 6) {                       
                         $('#msg').show()
-
+                        $('#msg #mensagem').html('<h2>Você errou 6 vezes seguidas.</h2>')
+                        
                     }
                 }
             })
