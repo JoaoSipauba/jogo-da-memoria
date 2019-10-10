@@ -21,7 +21,6 @@
     <div id="content"></div>
     <div id="msg">
         <div id="mensagem"></div>
-        <input type="text" id="inputName" maxlength="10" placeholder="Digite seu nome">
         <button id="b">ok</button>
     </div>
     <div id="erros"></div>
@@ -48,7 +47,7 @@
             var errou = 0
             var achados = 0
             $('#b').on('click',function () {
-                $('#msg').show().hide(200);
+                $('#msg').hide()
                 location.href = "inicial.html";
             })
             $('.imageContainer').on('click', function (event) {
@@ -65,9 +64,7 @@
                 )
                 if (click.length === 2) {
                     if (click[0].nome === click[1].nome) {
-                        console.log('iguais');
                         achados = achados + 1;
-                        console.log(achados);
                         if (achados === 8) {
                             var t1 = performance.now();
                             var tempo = ((t1 - t0) / 1000).toFixed(2);
@@ -75,9 +72,8 @@
                             if (tempo < top1) {                               
                                 $('#msg').show()
                                 $('#msg #mensagem').html(`<h2>você bateu o recorde em ${tempo}s.</h2>`)
-                                nome = querySelector('#inputName')
-                                console.log(nome);
-                                
+                                localStorage.setItem('top1', tempo);
+                                localStorage.setItem('recordista',localStorage.getItem('player'));
                             }
                             else {
                                 $('#msg').show()

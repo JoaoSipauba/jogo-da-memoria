@@ -37,7 +37,19 @@ button{
     font-size: 170%;
     font-family: 'Lato', sans-serif;
     color: aliceblue;
-    margin-top: 80%;
+    margin-top: 5%;
     border: 4px solid rgba(0, 0, 0, 0.945);
 
+}
+#inputName{
+    margin-top: 55%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 10%;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.945);
+    text-align: center;
+    background-color: gainsboro;
 }
