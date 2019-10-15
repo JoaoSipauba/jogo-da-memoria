@@ -18,8 +18,8 @@
     <div id="content_inicial">
         <input type="text" id="inputName" maxlength="10" placeholder="Digite seu nome">
         <div class="btn">
-            <a id="btn_iniciar" href="main.html">
-                <button>Iniciar</button>
+            <a  href="main.html">
+                <button id="btn_iniciar" disabled>Iniciar</button>
             </a>
             <a id="btn_sobre" href="sobre.html">
                 <button>Sobre</button>
@@ -38,6 +38,14 @@
                     $('#btn_iniciar').on('click',function () {
                         var player = document.getElementById('inputName').value
                         localStorage.setItem('player',player)
+                    })
+                    $('#inputName').keyup(function(event){                       
+                        if (event.target.value !== ''){                          
+                            $('#btn_iniciar').removeAttr('disabled');
+                        }
+                        if (event.target.value === ''){
+                            $('#btn_iniciar').attr('disabled','disabled');
+                        }                            
                     })
                           
                 </script>                
