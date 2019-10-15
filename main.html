@@ -51,9 +51,6 @@
                 location.href = "inicial.html";
             })
             $('.imageContainer').on('click', function (event) {
-                if ($(this).find('.back').attr('class') === 'back') {
-                    return
-                }
                 let hidden = $(this).find('.front')
                 hidden.removeClass('front').addClass('back')
                 click.push(
@@ -90,13 +87,17 @@
                             }, 500)
                         }
                         errou = errou + 1;
-                        $('#erros').html(`<h2>você errou ${errou} vezes.</h2>`);
+                        if (errou === 1){
+                            $('#erros').html(`<h2>você errou ${errou} vez.</h2>`);
+                        }
+                        else{
+                            $('#erros').html(`<h2>você errou ${errou} vezes.</h2>`);
+                        }
                     }
                     click = []
                     if (errou === 6) {                       
-                        $('#msg').show()
-                        $('#msg #mensagem').html('<h2>Você errou 6 vezes seguidas.</h2>')
-                        
+                        $('#msg').show();
+                        $('#msg #mensagem').html('<h2>Você errou 6 vezes seguidas.</h2>');                      
                     }
                 }
             })
