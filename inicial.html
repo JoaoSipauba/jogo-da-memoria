@@ -27,28 +27,7 @@
         </div>
         <div id="content_rank">
             <div id="rank">
-                <script>
-                    if (localStorage.getItem('top1')===null ||localStorage.getItem('top1')==='800') {
-                        document.write('')
-                    }
-                    else  {
-                        var rankTxt = `<h2>Recorde de ${localStorage.getItem('recordista')} em ${localStorage.getItem('top1')}s</h2>`
-                        document.write(rankTxt)
-                    }
-                    $('#btn_iniciar').on('click',function () {
-                        var player = document.getElementById('inputName').value
-                        localStorage.setItem('player',player)
-                    })
-                    $('#inputName').keyup(function(event){                       
-                        if (event.target.value !== ''){                          
-                            $('#btn_iniciar').removeAttr('disabled');
-                        }
-                        if (event.target.value === ''){
-                            $('#btn_iniciar').attr('disabled','disabled');
-                        }                            
-                    })
-                          
-                </script>                
+                <script src="/src/js/inicial.js"></script>                
             </div>
         </div>
     </div>
