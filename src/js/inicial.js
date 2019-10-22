@@ -9,3 +9,12 @@ $('#btn_iniciar').on('click', function () {
     var player = document.getElementById('inputName').value
     localStorage.setItem('player', player)
 })
+
+$('#inputName').keyup(function(event){                       
+    if (event.target.value !== ''){                          
+        $('#btn_iniciar').removeAttr('disabled');
+    }
+    if (event.target.value === ''){
+        $('#btn_iniciar').attr('disabled','disabled');
+    }                            
+})
