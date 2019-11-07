@@ -6,15 +6,17 @@ else {
     document.write(rankTxt)
 }
 $('#btn_iniciar').on('click', function () {
-    var player = document.getElementById('inputName').value
-    localStorage.setItem('player', player)
+    var player = document.getElementById('inputName').value;
+    localStorage.setItem('player', player);
+    window.location.href="main.html";
 })
 
-$('#inputName').keyup(function(event){                       
-    if (event.target.value !== ''){                          
+$('#inputName').keyup(function(event){  
+    var inputValue = event.target.value.trim()                     
+    if (inputValue !== ''){                          
         $('#btn_iniciar').removeAttr('disabled');
     }
-    if (event.target.value === ''){
+    if (inputValue === ''){
         $('#btn_iniciar').attr('disabled','disabled');
     }                            
 })
