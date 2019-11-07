@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 body{
-    background-color: aqua;
+    background-color: 00ceea;
 }
 
 
@@ -34,7 +34,7 @@ button{
     cursor: pointer;
     border-radius: 50px;
     border: white;
-    background-color: rgba(0, 136, 169, 1);
+    background-color: #0088a9;
     width: 120px;
     height: 40px;
     font-size: 120%;
