@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 body{
-    background-color: 00ceea;
+    background-color: #00ceea;
 }
 
 
@@ -28,17 +28,6 @@ p{
     height: 40px;
     padding: 0 0 5;
  }
- button{
-    cursor: pointer;
-    border-radius: 50px;
-    border: white;
-    background-color: rgba(0, 136, 169, 1);
-    width: 120px;
-    height: 40px;
-    font-size: 120%;
-    font-family: 'Lato', sans-serif;
-    color: aliceblue;
-}
 #texto{
     width: 50%;
 }

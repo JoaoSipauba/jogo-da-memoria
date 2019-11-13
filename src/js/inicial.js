@@ -7,16 +7,18 @@ else {
 }
 $('#btn_iniciar').on('click', function () {
     var player = document.getElementById('inputName').value;
-    localStorage.setItem('player', player);
-    window.location.href="main.html";
+    if (player === ''){
+        $('#inputName').attr('required','req');
+    }
+    if (player !== ''){
+        localStorage.setItem('player', player);
+        window.location.href="main.html";
+    }
 })
 
-$('#inputName').keyup(function(event){  
-    var inputValue = event.target.value.trim()                     
-    if (inputValue !== ''){                          
-        $('#btn_iniciar').removeAttr('disabled');
-    }
-    if (inputValue === ''){
-        $('#btn_iniciar').attr('disabled','disabled');
-    }                            
+$('#inputName').keyup(function(event){ 
+    var inputValue = event.target.value.trim()  
+    if (inputValue !== ''){                 
+        $('#inputName').removeAttr('required');
+    }                          
 })
