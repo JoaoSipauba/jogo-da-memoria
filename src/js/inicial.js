@@ -14,7 +14,7 @@ $('#btn_iniciar').on('click', function () {
 
     if (player !== '') {
         localStorage.setItem('player', player);
-        window.location.href = "main.html";
+        window.location.href = "src/html/main.html";
     }
 })
 
