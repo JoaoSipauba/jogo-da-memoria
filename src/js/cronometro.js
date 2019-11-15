@@ -11,6 +11,8 @@ function tempo() {
 		if (ms < 10) document.getElementById("msegundo").innerHTML = "0" + ms; else document.getElementById("msegundo").innerHTML = ms ;
 		if (s< 10) document.getElementById("segundo").innerHTML = "0" + s+ ":"; else document.getElementById("segundo").innerHTML = s+ ":";		
 		ms++;
+		console.log(s);
 	},10);
+	
 }
 window.onload=tempo;
