@@ -7,7 +7,7 @@ body{
 
 h1{
     margin-top: 30px;
-    font-size: 70px;
+    font-size: 79px;
     text-align: center;
     padding: 5px;
     font-family: 'Oswald', sans-serif;
@@ -55,7 +55,7 @@ a:hover{
     cursor: default;
 }
 #inputName{
-    margin-top: 55%;
+    margin-top: 10%;
     margin-left: 6%;
     display: flex;
     flex-direction: row;
@@ -65,6 +65,7 @@ a:hover{
     border: 3px solid rgba(0, 0, 0, 0.945);
     text-align: center;
     background-color: gainsboro;
+    font-size: 20px;
 }
 
 #inputname:required {
