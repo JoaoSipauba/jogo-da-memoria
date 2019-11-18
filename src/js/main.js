@@ -40,6 +40,7 @@ $('document').ready(function () {
                 achados = achados + 1;
                 if (achados === 8) {
                     var t1 = performance.now();
+                    window.clearInterval(intervalo);
                     var tempo = ((t1 - t0) / 1000).toFixed(2);
                     var top1 = localStorage.getItem("top1")
                     if (tempo < top1) {
@@ -69,7 +70,7 @@ $('document').ready(function () {
             if (errou === 6) {
                 $('#msg').show()
                 $('#msg #mensagem').html('<h2>Você errou 6 vezes seguidas.</h2>')
-
+                window.clearInterval(intervalo);
             }
         }
     })

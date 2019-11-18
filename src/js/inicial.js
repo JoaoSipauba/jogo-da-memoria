@@ -3,7 +3,7 @@ if (localStorage.getItem('top1') === null || localStorage.getItem('top1') === '8
 }
 
 else {
-    var rankTxt = `<h2>Recorde de ${localStorage.getItem('recordista')} em ${localStorage.getItem('top1')}s</h2>`
+    var rankTxt = `<h2>Recorde de ${localStorage.getItem('recordista')} em ${localStorage.getItem('top1')}</h2>`
     document.write(rankTxt)
 }
 $('#btn_iniciar').on('click', function () {
