@@ -21,7 +21,7 @@ $('document').ready(function () {
     var achados = 0
     $('#b').on('click', function () {
         $('#msg').hide()
-        location.href = "../../inicial.html";
+        location.href = "../../index.html";
     })
     $('.imageContainer').on('click', function (event) {
         if ($(this).find('.back').attr('class') === 'back') {
