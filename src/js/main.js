@@ -64,14 +64,21 @@ $('document').ready(function () {
                     }, 500)
                 }
                 errou = errou + 1;
-                $('#erros').html(`<h2>você errou ${errou} vezes.</h2>`);
+                if (errou == 1){
+                    $('#erros').html(`<h2>Você errou ${errou} vez.</h2>`);
+                }
+                else{
+                    $('#erros').html(`<h2>Você errou ${errou} vezes.</h2>`);
+                }
             }
             click = []
             if (errou === 6) {
                 $('#msg').show()
-                $('#msg #mensagem').html('<h2>Você errou 6 vezes seguidas.</h2>')
+                $('#msg #mensagem').html('<h2>6 erros seguidos. Você perdeu!</h2>')
                 window.clearInterval(intervalo);
             }
+            
         }
     })
+     
 });
