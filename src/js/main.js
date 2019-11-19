@@ -5,7 +5,7 @@ $('document').ready(function () {
         localStorage.setItem("top1", 800)
     }
     let q = ""
-    let elementos = ['black', 'red', 'purple', 'blue', 'white', 'pink', 'orange', 'green'];
+    let elementos = ['black', 'red', 'purple', 'blue', 'white', 'hotpink', 'orange', 'green'];
     let matriz = elementos.concat(elementos);
     let tamanho = matriz.length;
     for (let i = 0; i < tamanho; i++) {
