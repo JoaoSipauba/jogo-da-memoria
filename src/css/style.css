@@ -95,7 +95,7 @@ button:hover{
 #msg{
     width: 600px;
     height: 300px;
-    background-color: rgba(8, 119, 119, 0.911);
+    background-color: #117e98;
     position: relative;
     top: -40%;
     margin: 0 auto;
