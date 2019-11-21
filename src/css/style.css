@@ -124,3 +124,59 @@ button:hover{
 #erros{
     text-align: center;
 }
+
+@media screen and (max-width: 1070px){
+    h1{
+        font-size: 800%;
+    }
+    #toolbar{
+        width: 50%;
+        height: 6%;
+        font-size: 230%;
+    }
+    button{
+        width: 49%;
+        height: 100%;
+    }
+    #content{
+        margin: 1% auto;
+        max-width: 800px;
+        height: 800px;
+    }
+    #content .imageContainer{
+        background-color: darkblue;
+        width: 185px;
+        height: 185px;
+        margin: 7.5px;
+        float: left;
+        border-radius: 10px;
+    }
+    #codigo {
+        width:14.5%;
+        padding: 8 11;
+        margin: 5 0 0 41.5%;
+        font-size: 380%;
+    }
+    #msg{
+        width: 90%;
+        height: 30%;
+        text-align: center;
+    }
+    #mensagem{
+        margin: 3% auto;
+        width: 85%;
+        height: 50%;
+    }
+    #msg #b{
+        width: 40%;
+        height: 20%;
+        margin: 10%;
+        font-size: 300%;
+    }
+    #msg h2{
+        font-size: 380%;
+    }
+    h2{
+        font-size: 400%;
+    }
+}
